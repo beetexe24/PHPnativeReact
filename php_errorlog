@@ -1,0 +1,11 @@
+[15-Jun-2022 14:06:15 UTC] PHP Fatal error:  Uncaught Error: Class 'Components\HttpFoundation\Model' not found in /home/customer/www/fasttrackfba.com/public_html/FTF/API/ipapi9/app/http/models/brands.php:9
+Stack trace:
+#0 /home/customer/www/fasttrackfba.com/public_html/FTF/API/ipapi9/autoloader.php(5): include()
+#1 [internal function]: {closure}('app\\http\\models...')
+#2 /home/customer/www/fasttrackfba.com/public_html/FTF/API/ipapi9/app/http/controllers/api/brandsController.php(39): spl_autoload_call('app\\http\\models...')
+#3 [internal function]: brandsController->retrieve()
+#4 /home/customer/www/fasttrackfba.com/public_html/FTF/API/ipapi9/components/httpFoundation/HttpRequest.php(326): call_user_func(Array)
+#5 /home/customer/www/fasttrackfba.com/public_html/FTF/API/ipapi9/components/httpFoundation/HttpRequest.php(89): components\httpFoundation\HttpRequest->loadApiCurrentURL('/FTF/API/ipapi9...')
+#6 /home/customer/www/fasttrackfba.com/public_html/FTF/API/ipapi9/index.php(21): components\httpFoundation\HttpRequest->__construct()
+#7 {main}
+  thrown in /home/customer/www/fasttrackfba.com/public_html/FTF/API/ipapi9/app/http/models/brands.php on line 9
