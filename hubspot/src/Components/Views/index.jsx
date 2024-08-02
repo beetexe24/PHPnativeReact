@@ -31,6 +31,7 @@ export default function Index(){
         
 
         fetch(params);
+        justpost();
 
     }, [])
 
@@ -80,6 +81,21 @@ export default function Index(){
             setTimeout(() => {
                 setDisplaySkeleton('none');
             }, 500);
+        });
+    }
+
+    const justpost = () => {
+        axios.post('http://localhost:8000/api/justpost', {data: "newdata"}, {headers: {
+            'Content-Type': 'application/json',
+        }})
+            .then(response => {
+            if(response.data.success)
+            {
+                console.log("Success");
+            }
+        })
+        .catch((error) => {
+            console.log(error);
         });
     }
 

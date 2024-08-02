@@ -1,6 +1,7 @@
 <?php
 use components\httpFoundation\Route;
 use components\httpFoundation\Session;
+use components\httpFoundation\Headers;
 
 function numCheck($string){
 	return (preg_match('~[0-9]+~', $string)) ? true : false;
@@ -145,12 +146,15 @@ function detectCurrentRoute_and_url($current_url, $api = null)
 				Session::set("current_url", $current_url);
 				Session::set("current_request", $request);
 				Session::set("route_request", $api);
+
+
 				break;
 			}
 
 		}
 
 	
+		$headers = new Headers;
 
 		$array = (object)array(
 			'error'			=> ($success == false) ? 'Route not found' : '',

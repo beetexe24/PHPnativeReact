@@ -40,4 +40,10 @@ class hubspotController extends Controller{
 		echo json_encode($hubspotService->fetchContacts($request));
 		
 	}
+
+	public function justpost()
+	{
+		$request = new Request;
+		echo "Hi";
+	}
 }

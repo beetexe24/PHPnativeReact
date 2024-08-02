@@ -20,15 +20,6 @@ class Request{
 			Session::get('route_request')
 		);
 
-
-
-		// SET HEADER FOR API
-		if(strtoupper(Session::get('route_request')) == 'API')
-		{
-			$this->declareHeader(Session::get('current_request'));
-		}
-
-
 		Session::unset('route_url');
 		Session::unset('current_url');
 		Session::unset('current_request');
@@ -150,7 +141,8 @@ class Request{
 		{
 			header("Access-Control-Allow-Origin: *");
 			header("Content-Type: application/json; charset=UTF-8");
-		}elseif(strtoupper($current_request) == 'POST' || strtoupper($current_request) == 'PUT'){
+		}else
+		{
 			header("Access-Control-Allow-Origin: *");
 			header("Access-Control-Allow-Credentials: true");
 			header("Content-Type: application/json; charset=UTF-8");
